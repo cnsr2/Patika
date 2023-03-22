@@ -1,22 +1,25 @@
 const fs = require('fs');
-    // -- burada yeni bir employees.json dosyası oluşturup içini dolduruyoruz 
-    //  fs.appendFile("./employees.json", '{"name": "Employee 1 Name", "salary": 2000}', (err) => {
-    //      if (err) throw err;
-    //  })
+// -- burada yeni bir employees.json dosyası oluşturup içini dolduruyoruz 
 
-    // -- burada oluşturduğumuz dosyayı okuyoruz
+fs.appendFile("./employees.json", '{"name": "Employee 1 Name", "salary": 2000}', (err) => {
+    if (err) throw err;
+})
 
-    // fs.readFile("./employees.json",'utf8',(err,data) => {
-    //     if (err) throw err;
-    //     console.log(data);
-    // });
+// -- burada oluşturduğumuz dosyayı okuyoruz
 
-    // -- burada dosyamızın içeriğini güncelliyoruz 
+fs.readFile("./employees.json", 'utf8', (err, data) => {
+    if (err) throw err;
+    console.log(data);
+});
 
-    // fs.writeFile("./employees.json",'{"sale":20}"','utf-8',(err) => {
-    //     if (err) throw err;
-    //     console.log("Dosya'ya Güncellendi");
-    // });
-    fs.unlink("./employees.json",(err) => {
-        if (err) throw err;
-    });
+// -- burada dosyamızın içeriğini güncelliyoruz 
+
+fs.writeFile("./employees.json", '{"sale":20}"', 'utf-8', (err) => {
+    if (err) throw err;
+    console.log("Dosya'ya Güncellendi");
+});
+
+//-- burada dosyamızın içeriğini siliyoruz
+fs.unlink("./employees.json", (err) => {
+    if (err) throw err;
+});
